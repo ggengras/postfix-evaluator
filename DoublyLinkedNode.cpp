@@ -3,7 +3,8 @@
  * ENGS65 Project 5
  * DoublyLinkedNode.cpp
  *
- *
+ * Linked List Node for use with DoublyLinkedList
+ * See header file for more information
  */
 
 #include "DoublyLinkedNode.h"

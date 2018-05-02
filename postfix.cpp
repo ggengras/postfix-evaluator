@@ -1,21 +1,21 @@
 /*
-Graeme Gengras
-ENGS65 Project 5
-Postfix.cpp
-
-Program to evaluate postfix expressions
-
-Used the following link as a reference and for test cases:
-http://www.cs.csi.cuny.edu/~zelikovi/csc326/data/assignment5.htm
-*/
+ * Graeme Gengras
+ * ENGS65 Project 5
+ * Postfix.cpp
+ *
+ * Program to evaluate postfix expressions
+ *
+ * Used the following link as a reference and for test cases:
+ * http://www.cs.csi.cuny.edu/~zelikovi/csc326/data/assignment5.htm
+ */
 
 #include <iostream>
 #include "Stack.h"
 
 using namespace std;
 
+// Function to do the postfix calculation
 int EvaluatePostfix(string postfix) {
-  // Use one stack to store the whole expression and another to store operands as we pop numbers
   Stack stack;
   int result;
 
@@ -49,6 +49,7 @@ int EvaluatePostfix(string postfix) {
   return stack.top();
 }
 
+// Main loop
 int main() {
   while(true) {
     string postfix;

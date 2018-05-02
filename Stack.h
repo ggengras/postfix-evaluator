@@ -1,30 +1,47 @@
 /*
-Graeme Gengras
-ENGS65 Project 5
-Stack.h
-
-Outline of a stack using DoublyLinkedList
-This happens to be an int implementation,
-but it is trivial to change the type and
-could also easily be templated
-*/
+ * Graeme Gengras
+ * ENGS65 Project 5
+ * Stack.h
+ *
+ * Outline of a stack using DoublyLinkedList
+ * This happens to be an int implementation,
+ * but could be easily templated
+ */
 
 #include "DoublyLinkedList.h"
 
 class Stack {
   private:
-    DoublyLinkedList list; // char list for postfix evaluation
+    DoublyLinkedList list;
 
   public:
+    // Constructor
     Stack();
+
+    // Copy Constructor
     Stack(Stack &old_stack);
+
+    // Assignment operator
     Stack& operator=(Stack &rhs);
+
+    // Destructor
     ~Stack();
 
-    void push(char new_char); // Adds to top of stack
-    char pop(); // Removes from top of stack and returns value
-    char top(); // Returns top value of stack
-    int size(); // Returns size of stack
-    bool isEmpty(); // Returns whether stack is empty
-    void display(); // Displays values in the stack
+    // Adds to top of stack
+    void push(char new_char);
+
+    // Removes from top of stack and returns value
+    char pop();
+
+    // Returns top value of stack
+    char top();
+
+    // Returns size of stack
+    int size();
+
+    // Returns whether stack is empty
+    bool isEmpty();
+
+    // Prints values in the stack to stdout
+    void display();
 };

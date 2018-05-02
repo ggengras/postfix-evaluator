@@ -3,10 +3,8 @@
  * ENGS65 Project 5
  * DoublyLinkedList.h
  *
- * Implementation of a DoublyLinkedList, 0 indexed,
- *
- *
- * Definition in header file to eliminate possiblity of linking issues
+ * Implementation of a DoublyLinkedList, 0 indexed
+ * only takes ints but could be easily templated
  */
 
  #ifndef __DOUBLYLINKEDLIST_H
@@ -23,30 +21,40 @@ class DoublyLinkedList {
         DoublyLinkedNode* tail;
 
     public:
+        // Constructor (empty node)
         DoublyLinkedList();
 
-        DoublyLinkedList(DoublyLinkedList &old_list); // Copy Constructor NEED TO IMPLEMENT
+        // Copy Constructor
+        DoublyLinkedList(DoublyLinkedList &old_list);
 
+        // Destructor
         ~DoublyLinkedList();
 
+        // Assignment operator
         DoublyLinkedList& operator=(DoublyLinkedList &rhs);
 
+        // Insert a node at the front of the list
         void insertFront(int new_data);
 
+        // Insert a node at the back of the list
         void insertBack(int new_data);
 
-        // Removes data at front of list
+        // Removes node at front of list
         void removeFront();
 
+        // Removes node at back of list
         void removeBack();
 
+        // Prints the data in the list to stdout
         void display();
 
-
+        // Returns true if the list contains no nodes, else false
         bool isEmpty();
 
+        // Returns the int stored at a given list index
         int getData(int index);
 
+        // Returns the length of the list
         int size();
 };
 

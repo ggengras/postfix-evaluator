@@ -1,12 +1,11 @@
 /*
  * Graeme Gengras
  * ENGS65 Project 5
- * DoublyLinkedList.h
+ * DoublyLinkedList.cpp
  *
- * Implementation of a DoublyLinkedList, 0 indexed,
- * takes any type
- *
- * Definition in header file to eliminate possiblity of linking issues
+ * Implementation of a DoublyLinkedList, 0 indexed
+ * only takes ints but could be easily templated
+ * See header file for more information
  */
 
 #include <iostream>
@@ -14,16 +13,14 @@
 #include "DoublyLinkedNode.h"
 using namespace std;
 
-// Creates an empty list
 DoublyLinkedList::DoublyLinkedList() {
     head = nullptr; // Initialize to NULL
     tail = nullptr;
 }
 
-// Copy Constructor NEED TO IMPLEMENT
 DoublyLinkedList::DoublyLinkedList(DoublyLinkedList &old_list) {}
 
-DoublyLinkedList::~DoublyLinkedList() { // Destructor
+DoublyLinkedList::~DoublyLinkedList() {
     DoublyLinkedNode* iterator = head;
     while(iterator != nullptr) {
         DoublyLinkedNode* next = iterator->next;
@@ -32,14 +29,13 @@ DoublyLinkedList::~DoublyLinkedList() { // Destructor
     }
 }
 
-// Assignment operator NEED TO IMPLEMENT
+// NEEDS TO BE FINISHED
 DoublyLinkedList& DoublyLinkedList::operator=(DoublyLinkedList &rhs) {
     if (this == &rhs) { // Check for self­-assignment
         return *this;
     }
 }
 
-// Inserts data at front of list
 void DoublyLinkedList::insertFront(int new_data) {
     DoublyLinkedNode* iterator = new DoublyLinkedNode;
     iterator->data = new_data;
@@ -58,7 +54,6 @@ void DoublyLinkedList::insertFront(int new_data) {
     }
 }
 
-// Inserts data at back of list
 void DoublyLinkedList::insertBack(int new_data) {
     DoublyLinkedNode* iterator = new DoublyLinkedNode;
     iterator->data = new_data;
@@ -77,7 +72,6 @@ void DoublyLinkedList::insertBack(int new_data) {
     }
 }
 
-// Removes data at front of list
 void DoublyLinkedList::removeFront() {
     if (size() == 0) {
         return; // Can't remove if there aren't any nodes
@@ -98,7 +92,6 @@ void DoublyLinkedList::removeFront() {
     }
 }
 
-// Removes data at back of list
 void DoublyLinkedList::removeBack() {
     if (size() == 0) {
         return; // Can't remove if there aren't any nodes
@@ -110,12 +103,26 @@ void DoublyLinkedList::removeBack() {
         tail = nullptr;
     }
 
-    else { // Normal deletion case
+    else {
         DoublyLinkedNode*iterator = tail;
         tail = tail->prev;
         tail->next = nullptr;
         delete iterator;
     }
+
+    DoublyLinkedNode* iterator = head;
+    while(iterator != nullptr) {
+        cout << iterator->data << ' ' << endl;
+        iterator = iterator->next;
+    }
+}
+
+bool DoublyLinkedList::isEmpty() {
+    if (head == 0) {
+        return true; // list is empty if head and tail are NULL
+    }
+
+    return false;
 }
 
 void DoublyLinkedList::display() { // Prints data
@@ -126,16 +133,7 @@ void DoublyLinkedList::display() { // Prints data
     }
 }
 
-
-bool DoublyLinkedList::isEmpty() { // Test whether list is empty
-    if (head == 0) {
-        return true; // list is empty if head and tail are NULL
-    }
-
-    return false;
-}
-
-int DoublyLinkedList::getData(int index) { // Returns data at given index
+int DoublyLinkedList::getData(int index) {
     if (index > size() - 1) {
         cerr << "List index out of range" << endl; // Case of incorrect index
         exit(-1);
@@ -148,8 +146,8 @@ int DoublyLinkedList::getData(int index) { // Returns data at given index
     return iterator->data;
 }
 
-int DoublyLinkedList::size() { // Returns # of elements in list
-    DoublyLinkedNode* iterator = head;
+int DoublyLinkedList::size() {
+    DoublyLinkedNode* iterator = this->head;
     int size = 0;
 
     while(iterator != nullptr) {

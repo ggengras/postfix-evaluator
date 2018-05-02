@@ -1,10 +1,10 @@
 /*
-Graeme Gengras
-ENGS65 Project 5
-Stack.cpp
-
-Implementation of stack using DoublyLinkedList
-*/
+ * Graeme Gengras
+ * ENGS65 Project 5
+ * Stack.cpp
+ *
+ * Implementation of a Stack using DoublyLinkedList
+ */
 
 #include <iostream>
 #include "Stack.h"
