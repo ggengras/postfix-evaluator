@@ -13,7 +13,7 @@ could also easily be templated
 
 class Stack {
   private:
-    DoublyLinkedList<int> list; // char list for postfix evaluation
+    DoublyLinkedList list; // char list for postfix evaluation
 
   public:
     Stack();
