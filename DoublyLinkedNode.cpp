@@ -1,3 +1,11 @@
+/*
+ * Graeme Gengras
+ * ENGS65 Project 5
+ * DoublyLinkedNode.cpp
+ *
+ *
+ */
+
 #include "DoublyLinkedNode.h"
 
 DoublyLinkedNode::DoublyLinkedNode() {
@@ -11,9 +19,7 @@ DoublyLinkedNode::DoublyLinkedNode(DoublyLinkedNode &old_node) {
 }
 DoublyLinkedNode::~DoublyLinkedNode() {}
 
-DoublyLinkedNode& DoublyLinkedNode::operator=(DoublyLinkedNode &rhs) {
-
-}
+// DoublyLinkedNode& DoublyLinkedNode::operator=(DoublyLinkedNode &rhs) {}
 
 void DoublyLinkedNode::setData(int new_data) {
   data = new_data;

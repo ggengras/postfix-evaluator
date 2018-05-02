@@ -7,12 +7,10 @@
 CC=g++
 CFLAGS=-Wall -pedantic -ggdb
 
-all: postfix
+all: postfix Stack.o DoublyLinkedList.o DoublyLinkedNode.o
 
-postfix: postfix.o Stack.o DoublyLinkedList.o DoublyLinkedNode.o
+postfix: postfix.cpp Stack.o DoublyLinkedList.o DoublyLinkedNode.o
 	$(CC) $(CFLAGS) -o $@ $< Stack.o DoublyLinkedList.o DoublyLinkedNode.o
-
-postfix.o: postfix.cpp Stack.cpp
 
 Stack.o: Stack.cpp Stack.h DoublyLinkedList.o
 	$(CC) $(CFLAGS) -c Stack.cpp

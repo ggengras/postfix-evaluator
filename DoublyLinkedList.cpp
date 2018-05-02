@@ -21,7 +21,7 @@ DoublyLinkedList::DoublyLinkedList() {
 }
 
 // Copy Constructor NEED TO IMPLEMENT
-DoublyLinkedList::DoublyLinkedList(DoublyLinkedList &old_list) {};
+DoublyLinkedList::DoublyLinkedList(DoublyLinkedList &old_list) {}
 
 DoublyLinkedList::~DoublyLinkedList() { // Destructor
     DoublyLinkedNode* iterator = head;
@@ -34,7 +34,7 @@ DoublyLinkedList::~DoublyLinkedList() { // Destructor
 
 // Assignment operator NEED TO IMPLEMENT
 DoublyLinkedList& DoublyLinkedList::operator=(DoublyLinkedList &rhs) {
-    if (this == &rhs) { // Check for self­assignment
+    if (this == &rhs) { // Check for self­-assignment
         return *this;
     }
 }
