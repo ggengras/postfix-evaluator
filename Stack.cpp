@@ -13,11 +13,11 @@ using namespace std;
 
 Stack::Stack() {} // Nothing to do here
 
-Stack::Stack(Stack &old_stack) { // Copy constructor
+Stack::Stack(Stack &old_stack) {
   list = old_stack.list;
 }
 
-Stack& Stack::operator=(Stack &rhs) { // Assignment operator
+Stack& Stack::operator=(Stack &rhs) {
   if (this == &rhs) {
     return *this;
   }

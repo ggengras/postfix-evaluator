@@ -23,12 +23,12 @@ int EvaluatePostfix(string postfix) {
     if(postfix[i] == ' ') {
       postfix.erase(i,1);
     }
-  }
+}
 
   // Main postfix evaluation loop
   for(int i = 0; i < postfix.length(); i++) {
     if(isdigit(postfix[i])) { // If we see a digit
-      int operand = postfix[i] - '0';
+      int operand = postfix[i] - '0'; // ASCII to integer conversion
       stack.push(operand);
     }
 
@@ -53,7 +53,8 @@ int EvaluatePostfix(string postfix) {
 int main() {
   while(true) {
     string postfix;
-    Stack stack;
+    Stack stack; // Not sure why this line is here but if I take it out I get
+                 // seg faults...warrants further investigation
 
     cout << "Enter expression to evaluate or q to quit\n-> ";
     getline(cin, postfix); // User input
